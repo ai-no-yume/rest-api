@@ -17,7 +17,7 @@ public class CustomerController {
     public List<Customer> getCustomers() { return customerRepository.findAll(); }
 
     @GetMapping("/{id}")
-    public Customer getCustomerById(@PathVariable Long id) {
+    public Customer getCustomerByID(@PathVariable Long id) {
         return customerRepository.findById(id).orElse(null);
     }
 
@@ -33,7 +33,7 @@ public class CustomerController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCustomerById(@PathVariable Long id) {
+    public void deleteCustomerByID(@PathVariable Long id) {
         customerRepository.deleteById(id);
     }
 }

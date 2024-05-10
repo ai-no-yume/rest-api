@@ -19,7 +19,19 @@ CREATE TABLE `Customer` (
   `personalEmail` VARCHAR(100) NOT NULL,
   `addressLine1` VARCHAR(120) NOT NULL,
   `addressLine2` VARCHAR(120) NOT NULL,
-    `addressLine3` VARCHAR(120) NOT NULL
+  `addressLine3` VARCHAR(120) NOT NULL
+) CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `customer`
+-- ----------------------------
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `Product` (
+  `id` BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `price` DOUBLE NOT NULL,
+  `expirationDate` DATE NOT NULL,
+  `categoryID` BIGINT NOT NULL
 ) CHARSET=utf8;
 
 -- ----------------------------
@@ -29,4 +41,12 @@ INSERT INTO `Customer` (name, phoneNumber, personalEmail, addressLine1, addressL
     ('Juan Rodriguez', '3101234567', 'juan.rodriguez@example.com', 'Transversal 73 # 65 – 296 Sector El Volador, Medellín.', 'Barrio El Dorado, Edificio Torres del Sol, Piso 10 apto. B', 'Barrio El Dorado, Edificio Torres del Sol, Piso 10 apto. B'),
     ('Sofia Martinez', '3017654321', 'sofia.martinez@example.com', 'Carrera 53A Sur # 123E-78', 'Conjunto Residencial El Paraíso, Casa 15', 'Barrio El Dorado, Edificio Torres del Sol, Piso 10 apto. B'),
     ('Maria Lopez', '3009876543', 'maria.lopez@example.com', 'Transversal 73 # 65 – 296 Sector El Volador, Medellín.', 'Barrio El Dorado, Edificio Torres del Sol, Piso 10 apto. B', 'Cra. 73 # 65 - 296, El Progreso, Medellín, Castilla, Medellín, Antioquia');
+
+-- ----------------------------
+-- Records of product
+-- ----------------------------
+INSERT INTO `Product` (name, price, expirationDate, categoryID) VALUES
+    ('Oreo Biscuit', 3.99, '2024-05-15', 3),
+    ('Doritos Dynamite', 2.99, '2024-05-20', 2),
+    ('Coca-Cola Classic Soda Pop', 6.99, '2024-05-25', 1);
 ```
