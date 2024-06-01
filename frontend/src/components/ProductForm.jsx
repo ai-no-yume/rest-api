@@ -1,7 +1,6 @@
 import {useState} from "react";
 
-
-function ProductForm () {
+function ProductForm ({ onSubmit }) {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [expirationDate, setExpirationDate] = useState('')
@@ -15,7 +14,7 @@ function ProductForm () {
     // Sending the form
     const handleSubmit = (event) => {
         event.preventDefault()
-        onsubmit({name, price, expirationDate, categoryID})
+        onSubmit({name, price, expirationDate, categoryID})
 
         setName('')
         setPrice('')
@@ -26,9 +25,9 @@ function ProductForm () {
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="write the product's name here" value={name} onChange={handleChangeName} required/>
-            <input type="number" placeholder="write the product's price here" value={name} onChange={handleChangePrice} required/>
-            <input type="date" placeholder="write the product's expiration date here" value={name} onChange={handleChangeExpirationDate} required/>
-            <input type="number" placeholder="write the product's categoryID here" value={name} onChange={handleChangeCategoryID} required/>
+            <input type="number" placeholder="write the product's price here" value={price} onChange={handleChangePrice} required/>
+            <input type="date" placeholder="write the product's expiration date here" value={expirationDate} onChange={handleChangeExpirationDate} required/>
+            <input type="number" placeholder="write the product's categoryID here" value={categoryID} onChange={handleChangeCategoryID} required/>
             <button type="submit">Send</button>
         </form>
     )
